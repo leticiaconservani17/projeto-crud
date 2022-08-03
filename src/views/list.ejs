@@ -8,6 +8,14 @@
 
     <%- include('partials/navbar.ejs') %>
 
+    <% users.forEach((user) => { %>
+    <li>
+        <%= user.name %>
+        <a href="/edit?id=<%= user._id %>">[editar]</a> -
+        <a href="/remove/<%= user._id %>" >[remover]</a>
+    </li>
+    <% }) %>
+
     <%- include('partials/foot.ejs') %>
 </body>
 </html>
